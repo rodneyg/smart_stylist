@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { UserSizes } from '../types';
 
 interface UserProfileProps {
@@ -14,20 +14,20 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
     weight: '',
   });
 
-  const commonSizes = {
-    topSizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    bottomSizes: ['28', '30', '32', '34', '36', '38'],
-    shoeSizes: ['6', '7', '8', '9', '10', '11', '12'],
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setSizes(prevSizes => ({ ...prevSizes, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     onSaveSizes(sizes);
+  };
+
+  const commonSizes = {
+    topSizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    bottomSizes: ['28', '30', '32', '34', '36', '38'],
+    shoeSizes: ['6', '7', '8', '9', '10', '11', '12'],
   };
 
   return (
