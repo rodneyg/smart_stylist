@@ -14,7 +14,13 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
     weight: '',
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const commonSizes = {
+    topSizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    bottomSizes: ['28', '30', '32', '34', '36', '38'],
+    shoeSizes: ['6', '7', '8', '9', '10', '11', '12'],
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setSizes(prevSizes => ({ ...prevSizes, [name]: value }));
   };
@@ -32,7 +38,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="topSize">
             Top Size
           </label>
-          <input
+          <input list="topSizes"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="topSize"
             type="text"
@@ -42,12 +48,27 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
             onChange={handleInputChange}
             required
           />
+          <datalist id="topSizes">
+            {commonSizes.topSizes.map(size => (
+              <option key={size} value={size} />
+            ))}
+          </datalist>
+          <datalist id="bottomSizes">
+            {commonSizes.bottomSizes.map(size => (
+              <option key={size} value={size} />
+            ))}
+          </datalist>
+          <datalist id="shoeSizes">
+            {commonSizes.shoeSizes.map(size => (
+              <option key={size} value={size} />
+            ))}
+          </datalist>
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="bottomSize">
             Bottom Size
           </label>
-          <input
+          <input list="bottomSizes"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="bottomSize"
             type="text"
@@ -62,7 +83,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="shoeSize">
             Shoe Size
           </label>
-          <input
+          <input list="shoeSizes"
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="shoeSize"
             type="text"
