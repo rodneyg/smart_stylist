@@ -20,12 +20,6 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
     shoeSizes: ['6', '7', '8', '9', '10', '11', '12'],
   };
 
-  const commonSizes = {
-    topSizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    bottomSizes: ['28', '30', '32', '34', '36', '38'],
-    shoeSizes: ['6', '7', '8', '9', '10', '11', '12'],
-  };
-
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setSizes(prevSizes => ({ ...prevSizes, [name]: value }));
@@ -34,6 +28,12 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     onSaveSizes(sizes);
+  };
+
+  const commonSizes = {
+    topSizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    bottomSizes: ['28', '30', '32', '34', '36', '38'],
+    shoeSizes: ['6', '7', '8', '9', '10', '11', '12'],
   };
 
   const commonSizes = {
