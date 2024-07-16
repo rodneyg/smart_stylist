@@ -7,18 +7,15 @@ interface UserProfileProps {
 
 const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
   const [sizes, setSizes] = useState<UserSizes>({
+    bust: '',
+    waist: '',
+    hips: '',
     topSize: '',
     bottomSize: '',
     shoeSize: '',
     height: '',
     weight: '',
   });
-
-  const commonSizes = {
-    topSizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    bottomSizes: ['28', '30', '32', '34', '36', '38'],
-    shoeSizes: ['6', '7', '8', '9', '10', '11', '12'],
-  };
 
   const commonSizes = {
     topSizes: ['S', 'M', 'L', 'XL', 'XXL'],
@@ -36,23 +33,52 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
     onSaveSizes(sizes);
   };
 
-  const commonSizes = {
-    topSizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    bottomSizes: ['28', '30', '32', '34', '36', '38'],
-    shoeSizes: ['6', '7', '8', '9', '10', '11', '12'],
-  };
-
-  const commonSizes = {
-    topSizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    bottomSizes: ['28', '30', '32', '34', '36', '38'],
-    shoeSizes: ['6', '7', '8', '9', '10', '11', '12'],
-  };
-
   return (
     <div className="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <h2 className="text-2xl font-bold mb-4">Your Sizes</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="bust">
+            Bust (inches)
+          </label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="bust"
+            type="number"
+            placeholder="e.g., 34"
+            name="bust"
+            value={sizes.bust}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="waist">
+            Waist (inches)
+          </label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="waist"
+            type="number"
+            placeholder="e.g., 28"
+            name="waist"
+            value={sizes.waist}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="hips">
+            Hips (inches)
+          </label>
+          <input
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="hips"
+            type="number"
+            placeholder="e.g., 36"
+            name="hips"
+            value={sizes.hips}
+            onChange={handleInputChange}
+          />
+        </div>
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="topSize">
             Top Size
           </label>
@@ -64,20 +90,9 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
             name="topSize"
             value={sizes.topSize}
             onChange={handleInputChange}
-            required
           />
           <datalist id="topSizes">
             {commonSizes.topSizes.map(size => (
-              <option key={size} value={size} />
-            ))}
-          </datalist>
-          <datalist id="bottomSizes">
-            {commonSizes.bottomSizes.map(size => (
-              <option key={size} value={size} />
-            ))}
-          </datalist>
-          <datalist id="shoeSizes">
-            {commonSizes.shoeSizes.map(size => (
               <option key={size} value={size} />
             ))}
           </datalist>
@@ -94,7 +109,6 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
             name="bottomSize"
             value={sizes.bottomSize}
             onChange={handleInputChange}
-            required
           />
         </div>
         <div className="mb-4">
