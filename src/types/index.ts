@@ -13,6 +13,7 @@ export interface Event {
   id: number;
   name: string;
   description: string;
+  vibe?: string;
 }
 
 export interface OutfitItem {
