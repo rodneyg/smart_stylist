@@ -138,13 +138,13 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="height">
-            Height (cm)
+            Height (inches) (optional)
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="height"
             type="number"
-            placeholder="e.g., 170"
+            placeholder="e.g., 67"
             name="height"
             value={sizes.height}
             onChange={handleInputChange}
@@ -152,13 +152,13 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
         </div>
         <div className="mb-6">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="weight">
-            Weight (kg)
+            Weight (lbs) (optional)
           </label>
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="weight"
             type="number"
-            placeholder="e.g., 70"
+            placeholder="e.g., 154"
             name="weight"
             value={sizes.weight}
             onChange={handleInputChange}
