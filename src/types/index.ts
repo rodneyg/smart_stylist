@@ -1,4 +1,7 @@
 export interface UserSizes {
+  bust: string;
+  waist: string;
+  hips: string;
   topSize: string;
   bottomSize: string;
   shoeSize: string;
