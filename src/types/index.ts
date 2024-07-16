@@ -2,11 +2,11 @@ export interface UserSizes {
   bust: string;
   waist: string;
   hips: string;
-  topSize: string;
-  bottomSize: string;
-  shoeSize: string;
-  height: string;
-  weight: string;
+  topSize?: string;
+  bottomSize?: string;
+  shoeSize?: string;
+  height?: string;
+  weight?: string;
 }
 
 export interface Event {
