@@ -123,7 +123,6 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
             name="shoeSize"
             value={sizes.shoeSize}
             onChange={handleInputChange}
-            required
           />
         </div>
         <div className="mb-4">
@@ -138,7 +137,6 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
             name="height"
             value={sizes.height}
             onChange={handleInputChange}
-            required
           />
         </div>
         <div className="mb-6">
@@ -153,7 +151,6 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
             name="weight"
             value={sizes.weight}
             onChange={handleInputChange}
-            required
           />
         </div>
         <div className="flex items-center justify-between">
