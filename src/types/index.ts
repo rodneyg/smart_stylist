@@ -20,6 +20,8 @@ export interface OutfitItem {
   name: string;
   price: number;
   imageUrl?: string;
+  link?: string;
+  store?: string;
 }
 
 export interface Outfit {
