@@ -24,12 +24,19 @@ export interface OutfitItem {
   store?: string;
 }
 
+export interface Store {
+  id: string;
+  name: string;
+  url: string;
+}
+
 export interface Outfit {
   id: string;
   name: string;
   items: OutfitItem[];
   totalPrice: number;
   estimatedDelivery: string;
+  store: Store;
 }
 
 export interface Store {
