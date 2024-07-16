@@ -79,6 +79,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
             onChange={handleInputChange}
           />
         </div>
+        <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="topSize">
             Top Size
           </label>
@@ -110,6 +111,11 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
             value={sizes.bottomSize}
             onChange={handleInputChange}
           />
+          <datalist id="bottomSizes">
+            {commonSizes.bottomSizes.map(size => (
+              <option key={size} value={size} />
+            ))}
+          </datalist>
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="shoeSize">
@@ -124,6 +130,11 @@ const UserProfile: React.FC<UserProfileProps> = ({ onSaveSizes }) => {
             value={sizes.shoeSize}
             onChange={handleInputChange}
           />
+          <datalist id="shoeSizes">
+            {commonSizes.shoeSizes.map(size => (
+              <option key={size} value={size} />
+            ))}
+          </datalist>
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="height">
