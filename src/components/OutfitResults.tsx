@@ -1,5 +1,6 @@
 import React from 'react';
 import { Outfit } from '../types';
+import { format, addDays } from 'date-fns';
 
 interface OutfitResultsProps {
   outfits: Outfit[];
@@ -35,7 +36,9 @@ const OutfitResults: React.FC<OutfitResultsProps> = ({ outfits }) => {
             </ul>
             <div className="flex justify-between items-center border-t pt-2">
               <span className="text-lg font-bold">Total: ${outfit.totalPrice.toFixed(2)}</span>
-              <span className="text-sm text-gray-600">Estimated Delivery: {outfit.estimatedDelivery}</span>
+              <span className="text-sm text-gray-600">
+                FREE Delivery: {format(addDays(new Date(), parseInt(outfit.estimatedDelivery.split('-')[1])), 'EEE, MMM d')}
+              </span>
             </div>
           </div>
         ))}
