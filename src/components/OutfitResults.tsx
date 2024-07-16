@@ -13,7 +13,8 @@ const OutfitResults: React.FC<OutfitResultsProps> = ({ outfits }) => {
         {outfits.map((outfit) => (
           <div key={outfit.id} className="bg-white shadow-md rounded-lg p-4">
             <h3 className="text-xl font-semibold mb-2">{outfit.name}</h3>
-            <ul className="mb-4">
+            <p className="text-sm text-gray-600 mb-2">Store: {outfit.store.name}</p>
+            <ul className="mb-4"> 
               {outfit.items.map((item, index) => (
                 <li key={index} className="flex justify-between items-center mb-2">
                   <span>{item.name}</span>
