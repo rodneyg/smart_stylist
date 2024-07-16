@@ -25,7 +25,7 @@ const OutfitResults: React.FC<OutfitResultsProps> = ({ outfits }) => {
                   <div key={index} className="relative group">
                     <img src={item.imageUrl || 'https://via.placeholder.com/150'} alt={item.name} className="w-full h-auto rounded-lg" />
                     <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center">
-                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="text-white text-sm">
+                      <a href={item.link || 'https://www.fashionnova.com'} target="_blank" rel="noopener noreferrer" className="text-white text-sm">
                         View Item
                       </a>
                     </div>
