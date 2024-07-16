@@ -28,6 +28,11 @@ export const generateMockOutfit = (eventName: string): Outfit => {
     ],
     totalPrice: 0,
     estimatedDelivery: `${Math.floor(Math.random() * 5) + 2}-${Math.floor(Math.random() * 5) + 7} business days`,
+    store: {
+      id: '1',
+      name: 'Example Store',
+      url: 'https://example.com',
+    },
   };
 };
 
